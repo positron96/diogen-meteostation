@@ -20,13 +20,15 @@ body, #map { height: 100%;  width:100%; }
 <body>
 <div id="map"></div>
 <script>  
-var map = L.map('map').setView([55.0, 83], 9);  
-L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+var map = L.map('map').setView([55.0, 83], 10);  
+var outdoorsattrib = 'Thunderforest Outdoors Map<a href="http://www.thunderforest.com">, ';
+   
+L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/${z}/${x}/${y}.png', {
 	maxZoom: 18,
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-		id: 'examples.map-i875mjb7'
+			'Imagery © <a href="http://www.thunderforest.com">Thunderforest</a>',
+	id: 'examples.map-i875mjb7'
 	}).addTo(map);
 xively.setKey( "6Xjsshwd9lTnXMVoJ9OSsN40o2Lo7A3oVH4PqxhkYzpZIVhH" ); 
 var feedID        = 673942471;
