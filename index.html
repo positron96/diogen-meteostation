@@ -34,7 +34,7 @@ var datastreamID  = "temp";
 xively.datastream.get (feedID, datastreamID, function ( datastream ) {  
 	xively.feed.get(feedID, function(dat) { 
 		//console.log(datastream);
-		console.log(datastream)
+		console.log(dat)
 		var d = new Date(datastream["at"]).toLocaleString()
 		//console.log(d)
 		var marker = L.marker([dat.location.lat, dat.location.lon])
