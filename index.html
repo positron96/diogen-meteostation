@@ -43,7 +43,7 @@ xively.datastream.get (feedID, datastreamID, function ( datastream ) {
 			+"<br>Последнее обновление:"+d
 			+"<br><img src='http://api.xively.com/v2/feeds/"+feedID+'/datastreams/'+datastreamID+".png"
 			+"?w=250&h=100&g=true'/>"
-			+"<br><a href='http://xively.com/feeds/"+feedID+"'>link</a>").openPopup();
+			+"<br>[<a href='http://xively.com/feeds/"+feedID+"'>подробнее</a>]").openPopup();
 		/*
 		xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {  
 			$(selector).html( datastream_updated["current_value"] );  
