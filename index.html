@@ -34,12 +34,15 @@ var datastreamID  = "temp";
 xively.datastream.get (feedID, datastreamID, function ( datastream ) {  
 	xively.feed.get(feedID, function(dat) { 
 		//console.log(datastream);
-		console.log(datastream["at"])
+		console.log(datastream)
 		var d = new Date(datastream["at"]).toLocaleString()
-		console.log(d)
+		//console.log(d)
 		var marker = L.marker([dat.location.lat, dat.location.lon])
 		marker.addTo(map)
-		marker.bindPopup("<b>Temp="+datastream["current_value"]+"</b><br>Last update:"+d).openPopup();
+		marker.bindPopup("<b>Температура:"+datastream["current_value"]+"</b>"
+			+"<br>Последнее обновление:"+d
+			+"<br><img src='"++".png'>"+
+			+"<br><a href=''>link</a>").openPopup();
 		/*
 		xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {  
 			$(selector).html( datastream_updated["current_value"] );  
