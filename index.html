@@ -42,7 +42,7 @@ xively.datastream.get (feedID, datastreamID, function ( datastream ) {
 		marker.bindPopup("<b>Температура:"+datastream["current_value"]+"</b>"
 			+"<br>Последнее обновление:"+d
 			+"<br><img src='http://api.xively.com/v2/feeds/"+feedID+'/datastreams/'+datastreamID+".png"
-			+"?w=100&h=80&g=true'/>"+
+			+"?w=250&h=100&g=true'/>"
 			+"<br><a href='http://xively.com/feeds/"+feedID+"'>link</a>").openPopup();
 		/*
 		xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {  
