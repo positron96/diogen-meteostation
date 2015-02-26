@@ -9,11 +9,11 @@
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0x12, 0x34 };
 
 // Your Xively key to let you upload data
-char xivelyKey[] = "M7HPuPwbLjscak8W7VxBTM630lhPwCJRKb8CBEmnYzJPnxGP"; // enter the key, under API Keys
+char xivelyKey[] = "M7HPuPwbLjscak8W7VxBTM630lhPwCJRKb8CBEmnYz"; // enter the key, under API Keys
 unsigned long feedId = 673942471; // enter your feed ID, under Activated
-int frequency = 15000; // delay between updates (milliseconds)
+unsigned long frequency = 5*60*1000; // delay between updates (milliseconds)
 
-// Analog pin which we're monitoring (0 and 1 are used by the Ethernet shield)
+// Analog pin which we're monitoring (10,11,12,13 are used by the Ethernet shield)
 int sensorPin = 9;
 
 // Define the strings for our datastream IDs
@@ -76,7 +76,7 @@ float getTemp() {
     data[i] = ds.read();
   }
   
-//  Преобразование данных в фактическую температуру
+  //  Преобразование данных в фактическую температуру
  
   int16_t raw = (data[1] << 8) | data[0];
   if (type_s) {
@@ -95,7 +95,6 @@ float getTemp() {
 }
  
 
-
 void loop() {
   
   float celsius, fahrenheit;
@@ -109,7 +108,7 @@ void loop() {
   if (OneWire::crc8(addr, 7) != addr[7]) {
       return;
   }
-// Первый байт ROM указывает, какой чип
+  // Первый байт ROM указывает, какой чип
   switch (addr[0]) {
     case 0x10:
       type_s = 1;
